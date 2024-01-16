@@ -108,10 +108,10 @@ def register_backend(name: str,
     return _register
 
 
-register_backend('local', LocalBackend, prefixes='')
+register_backend('local', LocalBackend, prefixes=['', 's3'])
 register_backend('memcached', MemcachedBackend)
 register_backend('lmdb', LmdbBackend)
 # To avoid breaking backward Compatibility, 's3' is also used as a
 # prefix for PetrelBackend
-register_backend('petrel', PetrelBackend, prefixes=['petrel', 's3'])
+register_backend('petrel', PetrelBackend, prefixes=['petrel'])
 register_backend('http', HTTPBackend, prefixes=['http', 'https'])
